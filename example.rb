@@ -24,7 +24,7 @@ for iface in networks
    iface[2] = Net.new
    #разбиваем на октеты 
    1.upto(4){|octet| iface[2] << iface[0].sub(/(\d{1,})\.(\d{1,})\.(\d{1,})\.(\d{1,})/, "\\"+octet.to_s)}
-   #октеты в бинырную СС:
+   #октеты в бинарную СС:
    iface[3] = []
    0.upto(3){|octet| iface[3] << (dec2bin(iface[2][octet]))}
 end
