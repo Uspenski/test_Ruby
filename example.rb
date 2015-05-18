@@ -21,7 +21,7 @@ networks << ["192.168.122.1", "23"]
 
 #Заполняем networks = [[addr, mask, [1OCTET, 2OCTET, 3OCTET, 4OCTET]], ..............]
 for iface in networks
-   iface[2] = []
+   iface[2] = Net.new
    #разбиваем на октеты 
    1.upto(4){|octet| iface[2] << iface[0].sub(/(\d{1,})\.(\d{1,})\.(\d{1,})\.(\d{1,})/, "\\"+octet.to_s)}
    #октеты в бинырную СС:
